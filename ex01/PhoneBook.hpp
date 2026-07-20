@@ -5,14 +5,15 @@
 
 class PhoneBook{
 	public:
-	 PhoneBook(void);
-	 void	add_contact(Contact new_contact);
-	 int	get_nb_contacts(void);
+	 PhoneBook();
+	 void		add_contact(const Contact &new_contact);
+	 int		get_nb_contacts() const;
+	 Contact	get_contact(int index) const;
 
 	private:
-	 Contact	contacts[8];
-	 int		contacts_added;
-	 const int	MAX_CONTACT_NB;
+	 Contact	_contacts[8];
+	 int		_contacts_added;
+	 const int	_MAX_CONTACT_NB;
 };
 
 #endif
