@@ -1,18 +1,18 @@
 #include "PhoneBook.hpp"
 
-PhoneBook::PhoneBook() : _contacts_added(0), _MAX_CONTACT_NB(8) {}
+PhoneBook::PhoneBook() : _contactsAdded(0) {}
 
-void	PhoneBook::add_contact(const Contact &new_contact) {
-	this->_contacts[this->_contacts_added % 8] = new_contact;
-	++this->_contacts_added;
+void	PhoneBook::addContact(const Contact &new_contact) {
+	this->_contacts[this->_contactsAdded % 8] = new_contact;
+	++this->_contactsAdded;
 }
 
-int		PhoneBook::get_nb_contacts() const {
-	if (this->_contacts_added < this->_MAX_CONTACT_NB)
-		return this->_contacts_added;
-	return this->_MAX_CONTACT_NB;
+int		PhoneBook::getNbContacts() const {
+	if (this->_contactsAdded < 8)
+		return this->_contactsAdded;
+	return 8;
 }
 
-Contact	PhoneBook::get_contact(const int index) const {
+Contact	PhoneBook::getContact(const int index) const {
 	return this->_contacts[index];
 }

@@ -1,5 +1,4 @@
 #include <iostream>
-#include <cstdlib>
 #include <iomanip>
 #include <string>
 
@@ -23,16 +22,16 @@ std::string	get_contact_info(const std::string &info) {
 void	execute_add(PhoneBook *phonebook) {
 	Contact		new_contact;
 
-	new_contact.set_first_name(get_contact_info("First Name"));
-	new_contact.set_last_name(get_contact_info("Last Name"));
-	new_contact.set_nickname(get_contact_info("Nickname"));
-	new_contact.set_phone_number(get_contact_info("Phone Number"));
-	new_contact.set_darkest_secret(get_contact_info("Darkest Secret"));
-	phonebook->add_contact(new_contact);
+	new_contact.setFirstName(get_contact_info("First Name"));
+	new_contact.setLastName(get_contact_info("Last Name"));
+	new_contact.setNickname(get_contact_info("Nickname"));
+	new_contact.setPhoneNumber(get_contact_info("Phone Number"));
+	new_contact.setDarkestSecret(get_contact_info("Darkest Secret"));
+	phonebook->addContact(new_contact);
 }
 
 int	get_contact_index(const PhoneBook &phonebook) {
-	const int	nb_contacts = phonebook.get_nb_contacts();
+	const int	nb_contacts = phonebook.getNbContacts();
 	int			contact_index;
 
 	if (nb_contacts == 0) {
@@ -47,11 +46,11 @@ int	get_contact_index(const PhoneBook &phonebook) {
 		std::cout << "|" << std::setw(10) << "Last Name";
 		std::cout << "|" << std::setw(10) << "Nickname" << std::endl;
 		while (i < nb_contacts) {
-			Contact current_contact = phonebook.get_contact(i);
+			Contact current_contact = phonebook.getContact(i);
 			std::cout << std::setw(10) << i + 1;
-			std::cout << "|" << std::setw(10) << current_contact.get_first_name();
-			std::cout << "|" << std::setw(10) << current_contact.get_last_name();
-			std::cout << "|" << std::setw(10) << current_contact.get_nickname() << std::endl;
+			std::cout << "|" << std::setw(10) << current_contact.getFirstName();
+			std::cout << "|" << std::setw(10) << current_contact.getLastName();
+			std::cout << "|" << std::setw(10) << current_contact.getNickname() << std::endl;
 			++i;
 		}
 		std::cout << "Choose a contact index: ";
@@ -66,13 +65,13 @@ void	execute_search(const PhoneBook &phonebook) {
 	const int		contact_index = get_contact_index(phonebook) - 1;
 	if (contact_index < 0)
 		return ;
-	const Contact	searched_contact = phonebook.get_contact(contact_index);
+	const Contact	searched_contact = phonebook.getContact(contact_index);
 	system("clear");
-	std::cout << "First Name: " << searched_contact.get_first_name() << std::endl;
-	std::cout << "Last Name: " << searched_contact.get_last_name() << std::endl;
-	std::cout << "Nickname: " << searched_contact.get_nickname() << std::endl;
-	std::cout << "Phone Number: " << searched_contact.get_phone_number() << std::endl;
-	std::cout << "Darkest Secret: " << searched_contact.get_darkest_secret() << std::endl << std::endl;
+	std::cout << "First Name: " << searched_contact.getFirstName() << std::endl;
+	std::cout << "Last Name: " << searched_contact.getLastName() << std::endl;
+	std::cout << "Nickname: " << searched_contact.getNickname() << std::endl;
+	std::cout << "Phone Number: " << searched_contact.getPhoneNumber() << std::endl;
+	std::cout << "Darkest Secret: " << searched_contact.getDarkestSecret() << std::endl << std::endl;
 }
 
 void	get_user_input(std::string *user_input) {
