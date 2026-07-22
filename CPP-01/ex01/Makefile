@@ -1,4 +1,4 @@
-NAME = zombies_01
+NAME = hordes
 CC = c++
 CFLAGS = -Wall -Wextra -Werror
 SRC = main.cpp Zombie.cpp zombieHorde.cpp
