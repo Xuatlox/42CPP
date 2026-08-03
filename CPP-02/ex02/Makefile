@@ -1,6 +1,6 @@
 NAME = a.out
 CC = c++
-CFLAGS = -Wall -Wextra -Werror -std=c++98 -g
+CFLAGS = -Wall -Wextra -Werror
 SRC = main.cpp Fixed.cpp
 OBJ = $(SRC:.cpp=.o)
 
