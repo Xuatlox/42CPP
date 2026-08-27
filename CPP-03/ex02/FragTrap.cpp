@@ -21,7 +21,7 @@ FragTrap::FragTrap(FragTrap const &other) : ClapTrap(other){
 	this->setHitPoints(other.getHitPoints());
 	this->setEnergyPoints(other.getEnergyPoints());
 	this->setAttackDamage(other.getAttackDamage());
-	std::cout << "FragTrap " << this->getName() << "copied!" << std::endl;
+	std::cout << "FragTrap " << this->getName() << " copied!" << std::endl;
 }
 
 FragTrap &FragTrap::operator=(FragTrap const &other) {
@@ -32,7 +32,7 @@ FragTrap &FragTrap::operator=(FragTrap const &other) {
 		this->setEnergyPoints(other.getEnergyPoints());
 		this->setAttackDamage(other.getAttackDamage());
 	}
-	std::cout << "FragTrap " << this->getName() << "assigned!" << std::endl;
+	std::cout << "FragTrap " << this->getName() << " assigned!" << std::endl;
 	return *this;
 }
 

@@ -21,7 +21,7 @@ ScavTrap::ScavTrap(ScavTrap const &other) : ClapTrap(other){
 	this->setHitPoints(other.getHitPoints());
 	this->setEnergyPoints(other.getEnergyPoints());
 	this->setAttackDamage(other.getAttackDamage());
-	std::cout << "ScavTrap " << this->getName() << "copied!" << std::endl;
+	std::cout << "ScavTrap " << this->getName() << " copied!" << std::endl;
 }
 
 ScavTrap &ScavTrap::operator=(ScavTrap const &other) {
@@ -32,7 +32,7 @@ ScavTrap &ScavTrap::operator=(ScavTrap const &other) {
 		this->setEnergyPoints(other.getEnergyPoints());
 		this->setAttackDamage(other.getAttackDamage());
 	}
-	std::cout << "ScavTrap " << this->getName() << "assigned!" << std::endl;
+	std::cout << "ScavTrap " << this->getName() << " assigned!" << std::endl;
 	return *this;
 }
 
