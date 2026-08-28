@@ -7,13 +7,19 @@
 class PhoneBook{
 	public:
 	 PhoneBook();
-	 void		addContact(const Contact &new_contact);
-	 int		getNbContacts() const;
-	 Contact	getContact(int index) const;
+
+	 void	search() const;
+	 void	add();
 
 	private:
 	 Contact			_contacts[8];
 	 int				_contactsAdded;
+
+	 void				_addContact(const Contact &new_contact);
+	 int				_getNbContacts() const;
+	 Contact			_getContact(int index) const;
+	 static std::string	_getContactInfo(const std::string &info);
+	 int				_getContactIndex() const;
 };
 
 #endif

@@ -1,7 +1,7 @@
 #include "DiamondTrap.hpp"
 #include <iostream>
 
-DiamondTrap::DiamondTrap() : ClapTrap("Bob_clap_name"), FragTrap("Bob"), ScavTrap("Bob") {
+DiamondTrap::DiamondTrap() : ClapTrap("Bob_clap_name") {
 	std::cout << "Default DiamondTrap created." << std::endl;
 	this->name = "Bob";
 	this->hitPoints = 100;
@@ -26,7 +26,7 @@ DiamondTrap &DiamondTrap::operator=(DiamondTrap const &other) {
 	return *this;
 }
 
-DiamondTrap::DiamondTrap(std::string const &name) {
+DiamondTrap::DiamondTrap(std::string const &name) : ClapTrap(name + "_clap_name") {
 	std::cout << "DiamondTrap " << name << " created." << std::endl;
 	this->hitPoints = 100;
 	this->energyPoints = 50;
@@ -38,5 +38,5 @@ DiamondTrap::~DiamondTrap() {
 }
 
 void DiamondTrap::whoAmI() {
-	std::cout << "DiamondTrap " << this->name << " has the Claptrap name of " << this->getName() << "." << std::endl;
+	std::cout << "DiamondTrap " << this->name << " has the Claptrap name of " << this->ClapTrap::name << "." << std::endl;
 }
