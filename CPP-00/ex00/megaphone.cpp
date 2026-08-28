@@ -11,7 +11,7 @@ int main(const int ac, char **av)
 		{
 			while (**av)
 			{
-				std::cout << (char) std::toupper(**av);
+				std::cout << static_cast<char>(std::toupper(**av));
 				++*av;
 			}
 			++av;
