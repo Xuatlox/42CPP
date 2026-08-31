@@ -55,7 +55,11 @@ std::string PhoneBook::_getContactInfo(const std::string& info)
 		std::cout << "Enter " << info << ": ";
 		std::getline(std::cin, value);
 		system("clear");
-		if (std::cin.good() && !value.empty())
+		if (!std::cin.good()) {
+			std::cout << "Standard input closed, goodbye :D" << std::endl;
+			exit(0);
+		}
+		if (!value.empty())
 			break ;
 		std::cout <<  "This field can't be empty" << std::endl;
 	}
@@ -74,20 +78,35 @@ int PhoneBook::_getContactIndex() const
 	while (true) {
 		system("clear");
 		int			i = 0;
-		std::cout << std::setw(10) << "Index";
+		std::cout << "|" << std::setw(10) << "Index";
 		std::cout << "|" << std::setw(10) << "First Name";
 		std::cout << "|" << std::setw(10) << "Last Name";
-		std::cout << "|" << std::setw(10) << "Nickname" << std::endl;
+		std::cout << "|" << std::setw(10) << "Nickname" << "|" << std::endl;
 		while (i < nb_contacts) {
 			Contact current_contact = this->_getContact(i);
-			std::cout << std::setw(10) << i + 1;
-			std::cout << "|" << std::setw(10) << current_contact.getFirstName();
-			std::cout << "|" << std::setw(10) << current_contact.getLastName();
-			std::cout << "|" << std::setw(10) << current_contact.getNickname() << std::endl;
+			std::cout << "|" << std::setw(10) << i + 1;
+			std::string	info = current_contact.getFirstName();
+			if (info.length() > 9)
+				info = info.substr(0, 9) + ".";
+			std::cout << "|" << std::setw(10) << info;
+			info = current_contact.getLastName();
+			if (info.length() > 9)
+				info = info.substr(0, 9) + ".";
+			std::cout << "|" << std::setw(10) << info;
+			info = current_contact.getNickname();
+			if (info.length() > 9)
+				info = info.substr(0, 9) + ".";
+			std::cout << "|" << std::setw(10) << info << "|" << std::endl;
+			std::cout << "|" << std::endl;
 			++i;
 		}
 		std::cout << "Choose a contact index: ";
-		if (std::cin >> contact_index && contact_index > 0 && contact_index <= nb_contacts)
+		std::cin >> contact_index;
+		if (!std::cin.good()) {
+			std::cout << "Standard input closed, goodbye :D" << std::endl;
+			exit(0);
+		}
+		if (contact_index > 0 && contact_index <= nb_contacts)
 			return (contact_index);
 		std::cout << "Please enter a valid index" << std::endl;
 	}

@@ -17,14 +17,20 @@ int	main() {
 	PhoneBook phonebook;
 	std::string	user_input;
 
-	while (user_input != "EXIT") {
+	while (user_input != "EXIT" && std::cin.good()) {
 		get_user_input(&user_input);
 		if (user_input == "ADD")
 			phonebook.add();
 		else if (user_input == "SEARCH")
 			phonebook.search();
-		else
+		else {
 			system("clear");
+			if (user_input == "EXIT")
+				std::cout << "Exit command executed, goodbye :D" << std::endl;
+			else if (!std::cin.good())
+				std::cout << "Standard input closed, goodbye :D" << std::endl;
+
+		}
 	}
 	return 0;
 }
