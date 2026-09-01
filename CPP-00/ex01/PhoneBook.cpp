@@ -97,7 +97,6 @@ int PhoneBook::_getContactIndex() const
 			if (info.length() > 9)
 				info = info.substr(0, 9) + ".";
 			std::cout << "|" << std::setw(10) << info << "|" << std::endl;
-			std::cout << "|" << std::endl;
 			++i;
 		}
 		std::cout << "Choose a contact index: ";
