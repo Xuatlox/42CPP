@@ -20,6 +20,7 @@ WrongDog::WrongDog(const WrongDog& other) : WrongAnimal(other)
 
 WrongDog& WrongDog::operator=(const WrongDog& other)
 {
+	std::cout << "WrongDog assignment operator called" << std::endl;
 	if (this != &other)
 		this->type = other.type;
 	return *this;
