@@ -1,6 +1,10 @@
 #include "Zombie.hpp"
 #include <iostream>
 
+Zombie::Zombie() : name("Bob") {
+	std::cout << "Bob the default zombie appears" << std::endl;
+}
+
 Zombie::~Zombie() {
 	std::cout << name << ": Blurgh" << std::endl;
 }

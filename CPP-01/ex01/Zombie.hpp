@@ -7,7 +7,7 @@
 class Zombie {
 
 public:
-
+	Zombie( void );
 	~Zombie( void );
 
 	void		announce( void );
