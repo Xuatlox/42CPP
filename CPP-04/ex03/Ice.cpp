@@ -3,7 +3,7 @@
 
 Ice::Ice() {
 	std::cout << "Ice default constructor called" << std::endl;
-	type = "ice";
+	_type = "ice";
 }
 
 Ice::~Ice() {
@@ -12,15 +12,18 @@ Ice::~Ice() {
 
 Ice::Ice(Ice const &other) {
 	std::cout << "Ice copy constructor called" << std::endl;
-	type = other.type;
+	_type = other._type;
 }
 
 Ice &Ice::operator=(Ice const &other) {
 	std::cout << "Ice assignment operator called" << std::endl;
+	if (this != &other)
+		_type = other._type;
 	return *this;
 }
 
 AMateria *Ice::clone() const {
+	std::cout << "Ice clone called" << std::endl;
 	return new Ice(*this);
 }
 

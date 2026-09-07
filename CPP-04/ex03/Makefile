@@ -1,7 +1,7 @@
-NAME = abstract
+NAME = interface
 CC = c++
 CFLAGS = -Wall -Wextra -Werror -std=c++98 -g
-SRC = main.cpp Animal.cpp Dog.cpp Cat.cpp Brain.cpp
+SRC = main.cpp AMateria.cpp Character.cpp Cure.cpp Ice.cpp MateriaSource.cpp
 OBJ = $(SRC:.cpp=.o)
 
 all : $(NAME)

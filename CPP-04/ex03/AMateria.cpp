@@ -1,20 +1,22 @@
 #include <iostream>
 #include "AMateria.hpp"
 
-AMateria::AMateria() : type("default") {
+AMateria::AMateria() : _type("default") {
 	std::cout << "AMateria default constructor called" << std::endl;
 }
 
-AMateria::AMateria(std::string const &type) : type(type) {
+AMateria::AMateria(std::string const &type) : _type(type) {
 	std::cout << "AMateria string constructor called" << std::endl;
 }
 
-AMateria::AMateria(AMateria const &other) : type(other.type) {
+AMateria::AMateria(AMateria const &other) : _type(other._type) {
 	std::cout << "AMateria copy constructor called" << std::endl;
 }
 
 AMateria &AMateria::operator=(AMateria const &other) {
 	std::cout << "AMateria assignment operator called" << std::endl;
+	if (this != &other)
+		_type = other._type;
 	return *this;
 }
 
@@ -23,5 +25,5 @@ AMateria::~AMateria() {
 }
 
 std::string const &AMateria::getType() const {
-	return type;
+	return _type;
 }

@@ -3,7 +3,7 @@
 
 Cure::Cure() {
 	std::cout << "Cure default constructor called" << std::endl;
-	type = "cure";
+	_type = "cure";
 }
 
 Cure::~Cure() {
@@ -12,17 +12,18 @@ Cure::~Cure() {
 
 Cure::Cure(Cure const &other) {
 	std::cout << "Cure copy constructor called" << std::endl;
-	type = other.type;
+	_type = other._type;
 }
 
 Cure &Cure::operator=(Cure const &other) {
 	std::cout << "Cure assignment operator called" << std::endl;
 	if (this != &other)
-		type = other.type;
+		_type = other._type;
 	return *this;
 }
 
 AMateria *Cure::clone() const {
+	std::cout << "Cure clone called" << std::endl;
 	return new Cure(*this);
 }
 
