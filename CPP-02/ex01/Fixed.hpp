@@ -1,11 +1,10 @@
-#pragma once
 #ifndef FIXED_HPP
 #define FIXED_HPP
+
 #include <iosfwd>
 
 class Fixed
 {
-
 public:
 	Fixed();
 	Fixed(const int value);
@@ -22,7 +21,6 @@ public:
 private:
 	int	value;
 	static const int FRACTIONAL_BITS = 8;
-
 };
 
 std::ostream &operator<<(std::ostream &os, const Fixed &fixedNb);
